@@ -44,15 +44,15 @@ CREATE TABLE dior_receiver_address(
 /** dior商品表 **/
 CREATE TABLE dior_commodity(
   lid INT PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(128) NOT NULL,      #主标题
-  subtitle VARCHAR(128)NOT NULL,    #副标题
-  price DECIMAL(7,2)NOT NULL,       #价格
-  promise VARCHAR(64)NOT NULL,      #服务承诺
-  spec VARCHAR(64) NOT NULL,        #规格/色号
-  details VARCHAR(1024)NOT NULL,    #产品详细说明
-  shelf_time DATE NOT NULL,         #上架时间
-  sold_count INT DEFAULT 0,         #已售出的数量
-  is_onsale BOOLEAN DEFAULT 1       #是否促销中
+  title VARCHAR(128) ,      #主标题
+  subtitle VARCHAR(128),    #副标题
+  price DECIMAL(7,2),       #价格
+  promise VARCHAR(64),      #服务承诺
+  spec VARCHAR(64) ,        #规格号
+  details VARCHAR(1024),    #产品详细说明
+  shelf_time DATE,         #上架时间
+  sold_count INT ,         #已售出的数量
+  is_onsale BOOLEAN        #是否促销中
 );
 /**dior商品类型**/
 CREATE TABLE dior_commodity_type(
@@ -62,7 +62,7 @@ CREATE TABLE dior_commodity_type(
 #商品图片表
 CREATE TABLE dior_makeup_pic(
   pid INT PRIMARY KEY AUTO_INCREMENT,
-  makeup_id INT,              #笔记本电脑编号
+  makeup_id INT,              #商品编号
   sm VARCHAR(128),            #小图片路径
   md VARCHAR(128),            #中图片路径
   lg VARCHAR(128)             #大图片路径
